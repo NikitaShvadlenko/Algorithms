@@ -1,0 +1,6 @@
+strings:
+  inputs:
+    - Algorithms/Resources/Strings/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Algorithms/Generated/Strings+Generated.swift
