@@ -4,6 +4,7 @@ import XCTest
 final class AlgorithmsFilesTests: XCTestCase {
 
     let spec = SortingAlgorithms<Int>()
+
     func testBubbleSort() {
         let emptyArray = TestData.emptyArray
         let sortedArray = TestData.sortedArray
@@ -11,7 +12,7 @@ final class AlgorithmsFilesTests: XCTestCase {
 
         // swiftlint:disable line_length
         XCTAssertEqual(spec.bubbleSort(emptyArray), TestData.expectedResultFor(emptyArray), "it must return an empty array")
-        XCTAssertEqual(spec.bubbleSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array >")
+        XCTAssertEqual(spec.bubbleSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array <")
         XCTAssertEqual(spec.bubbleSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remailn sorted")
     }
 }
