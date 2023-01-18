@@ -1,6 +1,6 @@
 import Foundation
 
-class Algorithms<T: Comparable> {
+public class SortingAlgorithms<T: Comparable> {
 
     public func bubbleSort(_ array: [T]) -> [T] {
         var swapped = true
