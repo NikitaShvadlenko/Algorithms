@@ -13,13 +13,13 @@ final class SortingAlgorithmsTests: XCTestCase {
         // swiftlint:disable line_length
         XCTAssertEqual(spec.bubbleSort(emptyArray), TestData.expectedResultFor(emptyArray), "it must return an empty array")
         XCTAssertEqual(spec.bubbleSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array <")
-        XCTAssertEqual(spec.bubbleSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remailn sorted")
+        XCTAssertEqual(spec.bubbleSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remain sorted")
     }
 
     func testGnomeSort() {
         XCTAssertEqual(spec.gnomeSort(emptyArray), TestData.expectedResultFor(emptyArray), "it must return an empty array")
         XCTAssertEqual(spec.gnomeSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array <")
-        XCTAssertEqual(spec.gnomeSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remailn sorted")
+        XCTAssertEqual(spec.gnomeSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remain sorted")
     }
 
     func testSelectionSort() {
@@ -31,7 +31,7 @@ final class SortingAlgorithmsTests: XCTestCase {
     func testQuickSort() {
         XCTAssertEqual(spec.quickSort(emptyArray), TestData.expectedResultFor(emptyArray), "it must return an empty array")
         XCTAssertEqual(spec.quickSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array <")
-        XCTAssertEqual(spec.quickSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remailn sorted")
+        XCTAssertEqual(spec.quickSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remain sorted")
     }
 }
 
