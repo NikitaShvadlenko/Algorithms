@@ -21,6 +21,18 @@ final class AlgorithmsFilesTests: XCTestCase {
         XCTAssertEqual(spec.gnomeSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array <")
         XCTAssertEqual(spec.gnomeSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remailn sorted")
     }
+
+    func testSelectionSort() {
+        XCTAssertEqual(spec.selectionSort(emptyArray), TestData.expectedResultFor(emptyArray), "it must return an empty array")
+        XCTAssertEqual(spec.selectionSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array <")
+        XCTAssertEqual(spec.selectionSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remailn sorted")
+    }
+
+    func testQuickSort() {
+        XCTAssertEqual(spec.quickSort(emptyArray), TestData.expectedResultFor(emptyArray), "it must return an empty array")
+        XCTAssertEqual(spec.quickSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array <")
+        XCTAssertEqual(spec.quickSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remailn sorted")
+    }
 }
 
 private extension AlgorithmsFilesTests {

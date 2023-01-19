@@ -12,7 +12,6 @@ public class SortingAlgorithms<T: Comparable> {
 
         while swapped {
             swapped = false
-
             for index in 0..<array.count - 1 {
                 if array[index] > array[index+1] {
                     array.swapAt(index, index+1)
@@ -40,5 +39,29 @@ public class SortingAlgorithms<T: Comparable> {
             }
         }
         return array
+    }
+
+    public func selectionSort(_ array: [T]) -> [T] {
+        var array = array
+        for index in 0..<array.count {
+            let lowestIndex = index
+            for element in lowestIndex..<array.count {
+                if array[element] < array[lowestIndex] {
+                    array.swapAt(element, lowestIndex)
+                }
+            }
+        }
+        return array
+    }
+
+    public func quickSort(_ array: [T]) -> [T] {
+        if array.count <= 1 {
+            return array
+        } else {
+            let pivotElement = array[0]
+            let smallerElements = array.filter { $0 < pivotElement }
+            let largerElements = array.filter { $0 > pivotElement }
+            return quickSort(smallerElements) + [pivotElement] + quickSort(largerElements)
+        }
     }
 }
