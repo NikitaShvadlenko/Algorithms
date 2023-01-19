@@ -30,6 +30,8 @@ final class OtherAlgorithmsTests: XCTestCase {
     }
 
     func testBinarySearch() {
+        // this test won't work if there are 2 same searched items in the array.
+        // binary search does not check if an array is sorted. The array must be sorted for the search to work.
         XCTAssertEqual(spec.binarySearch(TestData.sortedArray, element: TestData.searchedExisitingItem), TestData.indexForSearchedItem, "It must return index of a searched item")
         XCTAssertEqual(spec.binarySearch(sortedArray, element: TestData.searchedUnexistingItem), nil, "it must return nil if an item is not in the array")
     }
