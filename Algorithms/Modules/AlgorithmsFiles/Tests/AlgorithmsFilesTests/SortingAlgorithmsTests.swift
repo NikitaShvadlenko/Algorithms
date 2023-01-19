@@ -25,7 +25,7 @@ final class SortingAlgorithmsTests: XCTestCase {
     func testSelectionSort() {
         XCTAssertEqual(spec.selectionSort(emptyArray), TestData.expectedResultFor(emptyArray), "it must return an empty array")
         XCTAssertEqual(spec.selectionSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array <")
-        XCTAssertEqual(spec.selectionSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remailn sorted")
+        XCTAssertEqual(spec.selectionSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remain sorted")
     }
 
     func testQuickSort() {
