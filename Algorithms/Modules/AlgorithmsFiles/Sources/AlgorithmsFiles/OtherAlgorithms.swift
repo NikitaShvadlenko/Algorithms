@@ -2,7 +2,7 @@ import Foundation
 
 class OtherAlgorithms {
 
-    func findLowerElements<T: Comparable>(_ array: [T], element: T) -> [T]? {
+    public func findLowerElements<T: Comparable>(_ array: [T], element: T) -> [T]? {
         if array.isEmpty {
             return nil
         }
@@ -15,7 +15,7 @@ class OtherAlgorithms {
         return newArray
     }
 
-    func factRecursively(_ number: Int) -> Int {
+    public func factRecursively(_ number: Int) -> Int {
         if number <= 1 {
             return 1
         } else {
@@ -23,7 +23,7 @@ class OtherAlgorithms {
         }
     }
 
-    func factIteratively(_ number: Int) -> Int {
+    public func factIteratively(_ number: Int) -> Int {
         var result = 1
         if number <= 1 {
             return 1
@@ -33,5 +33,25 @@ class OtherAlgorithms {
             }
         }
         return result
+    }
+
+    public func binarySearch<T: Comparable>(_ sortedArray: [T], element: T) -> Int? {
+        var higherIndex = sortedArray.count - 1
+        var lowerIndex = 0
+
+        while lowerIndex <= higherIndex {
+            let midIndex = (higherIndex + lowerIndex) / 2
+            let guess = sortedArray[midIndex]
+            if element == guess {
+                return midIndex
+            }
+
+            if element > guess {
+                lowerIndex = midIndex + 1
+            } else if element < guess {
+                higherIndex = midIndex - 1
+            }
+        }
+        return nil
     }
 }
