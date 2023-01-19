@@ -14,4 +14,24 @@ class OtherAlgorithms {
         }
         return newArray
     }
+
+    func factRecursively(_ number: Int) -> Int {
+        if number <= 1 {
+            return 1
+        } else {
+            return number * factRecursively(number-1)
+        }
+    }
+
+    func factIteratively(_ number: Int) -> Int {
+        var result = 1
+        if number <= 1 {
+            return 1
+        } else {
+            for integer in 1...number {
+                result *= integer
+            }
+        }
+        return result
+    }
 }
