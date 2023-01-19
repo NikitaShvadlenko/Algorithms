@@ -1,7 +1,7 @@
 import XCTest
 @testable import AlgorithmsFiles
 
-final class AlgorithmsFilesTests: XCTestCase {
+final class SortingAlgorithmsTests: XCTestCase {
 
     let spec = SortingAlgorithms<Int>()
 
@@ -35,7 +35,7 @@ final class AlgorithmsFilesTests: XCTestCase {
     }
 }
 
-private extension AlgorithmsFilesTests {
+private extension SortingAlgorithmsTests {
     enum TestData {
         static let emptyArray: [Int] = []
         static let unsortedArray = [1, 9, 2, 4, 88, 33, 22, 11, 90, 1111, 2332323, 1223145]
