@@ -55,13 +55,12 @@ public class SortingAlgorithms<T: Comparable> {
     }
 
     public func quickSort(_ array: [T]) -> [T] {
-        if array.count <= 1 {
+        guard array.count > 1 else {
             return array
-        } else {
+        }
             let pivotElement = array[0]
             let smallerElements = array.filter { $0 < pivotElement }
             let largerElements = array.filter { $0 > pivotElement }
             return quickSort(smallerElements) + [pivotElement] + quickSort(largerElements)
-        }
     }
 }
