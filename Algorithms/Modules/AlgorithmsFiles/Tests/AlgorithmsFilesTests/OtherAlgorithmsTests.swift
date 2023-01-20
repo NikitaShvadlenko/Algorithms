@@ -32,20 +32,35 @@ final class OtherAlgorithmsTests: XCTestCase {
     func testBinarySearch() {
         // this test won't work if there are 2 same searched items in the array.
         // binary search does not check if an array is sorted. The array must be sorted for the search to work.
-        XCTAssertEqual(spec.binarySearch(TestData.sortedArray, element: TestData.searchedExisitingItem), TestData.indexForSearchedItem, "It must return index of a searched item")
+        XCTAssertEqual(spec.binarySearch(TestData.sortedArray, element: TestData.searchedExisitingItem), TestData.indexForSearchedItemSorted, "It must return index of a searched item")
         XCTAssertEqual(spec.binarySearch(sortedArray, element: TestData.searchedUnexistingItem), nil, "it must return nil if an item is not in the array")
+    }
+
+    func testLinearSearh() {
+        XCTAssertEqual(spec.linearSearch(unsortedArray, item: TestData.searchedExisitingItem), TestData.indexForSearchedItemUnsorted, "It must return the index of the first searched element")
+        XCTAssertEqual(spec.linearSearch(sortedArray, item: TestData.searchedExisitingItem), TestData.indexForSearchedItemSorted, "It must return the index of the first searched element")
+        XCTAssertEqual(spec.linearSearch(unsortedArray, item: TestData.searchedUnexistingItem), nil, "It must return nil when element is not in the array")
+    }
+
+    func testSumAllItems() {
+        XCTAssertEqual(spec.sumAllItems(sortedArray), TestData.sumOfAllArrayNumbersSortedArray, "It must combine all numbers")
+        XCTAssertEqual(spec.sumAllItems(unsortedArray), TestData.sumOfAllArrayNumbersUnsortedArray, "It must combine all numbers")
+        XCTAssertEqual(spec.sumAllItems(emptyArray), 0, "It must return 0 if an array is empty")
     }
 }
 
 private extension OtherAlgorithmsTests {
     enum TestData {
         static let emptyArray: [Int] = []
-        static let unsortedArray = [1, 9, 2, 4, 88, 33, 22, 11, 90, 1111, 2332323, 1223145]
+        static let unsortedArray = [1, 9, 2, 4, 20, 88, 33, 22, 11, 90, 1111, 2332323, 1223145]
         static let sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 15, 20, 25]
+        static let sumOfAllArrayNumbersSortedArray = sortedArray.reduce(0, +)
+        static let sumOfAllArrayNumbersUnsortedArray = unsortedArray.reduce(0, +)
 
         static let searchedUnexistingItem = 99999
         static let searchedExisitingItem = 20
-        static let indexForSearchedItem = sortedArray.firstIndex(of: searchedExisitingItem)
+        static let indexForSearchedItemSorted = sortedArray.firstIndex(of: searchedExisitingItem)
+        static let indexForSearchedItemUnsorted = unsortedArray.firstIndex(of: searchedExisitingItem)
 
         static let positiveInteger = 4
         static let positiveIntegerFact = 4 * 3 * 2 * 1

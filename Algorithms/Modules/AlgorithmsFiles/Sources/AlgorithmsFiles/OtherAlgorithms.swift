@@ -54,4 +54,21 @@ class OtherAlgorithms {
         }
         return nil
     }
+
+    public func linearSearch<T: Equatable>(_ array: [T], item: T) -> Int? {
+        for index in 0..<array.count {
+            if array[index] == item {
+                return index
+            }
+        }
+        return nil
+    }
+
+    public func sumAllItems<T: Numeric>(_ array: [T]) -> T {
+        var result: T = 0
+        for index in 0..<array.count {
+            result += array[index]
+        }
+        return result
+    }
 }
