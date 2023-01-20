@@ -47,6 +47,12 @@ final class OtherAlgorithmsTests: XCTestCase {
         XCTAssertEqual(spec.sumAllItems(unsortedArray), TestData.sumOfAllArrayNumbersUnsortedArray, "It must combine all numbers")
         XCTAssertEqual(spec.sumAllItems(emptyArray), 0, "It must return 0 if an array is empty")
     }
+
+    func testSumAllItemsRecursively() {
+        XCTAssertEqual(spec.sumAllElementsRecursively(sortedArray, initialValue: 0), TestData.sumOfAllArrayNumbersSortedArray, "It must combine all numbers")
+        XCTAssertEqual(spec.sumAllElementsRecursively(unsortedArray, initialValue: 0), TestData.sumOfAllArrayNumbersUnsortedArray, "It must combine all numbers")
+        XCTAssertEqual(spec.sumAllItems(emptyArray), 0, "It must return 0 if an array is empty")
+    }
 }
 
 private extension OtherAlgorithmsTests {

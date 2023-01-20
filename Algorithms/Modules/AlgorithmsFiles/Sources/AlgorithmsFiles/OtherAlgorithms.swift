@@ -71,4 +71,15 @@ class OtherAlgorithms {
         }
         return result
     }
+
+    public func sumAllElementsRecursively<T: Numeric>(_ array: [T], initialValue: T) -> T {
+        guard !array.isEmpty else {
+            return initialValue
+        }
+        if array.count == 1 {
+            return array[0] + initialValue
+        }
+        let newArray = Array(array.dropFirst())
+        return sumAllElementsRecursively(newArray, initialValue: initialValue + array[0])
+    }
 }
