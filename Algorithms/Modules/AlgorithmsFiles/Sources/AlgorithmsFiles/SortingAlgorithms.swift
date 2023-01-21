@@ -110,10 +110,11 @@ public class SortingAlgorithms<T: Comparable> {
     }
 
     public func insertionSort(_ array: [T]) -> [T] {
-        var array = array
         guard array.count > 0 else {
             return array
         }
+
+        var array = array
 
         for currentSpace in 1..<array.count {
             var currentElementIndex = currentSpace
