@@ -33,6 +33,12 @@ final class SortingAlgorithmsTests: XCTestCase {
         XCTAssertEqual(spec.quickSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array <")
         XCTAssertEqual(spec.quickSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remain sorted")
     }
+
+    func testMergeSort() {
+        XCTAssertEqual(spec.mergeSort(emptyArray), TestData.expectedResultFor(emptyArray), "it must return an empty array")
+        XCTAssertEqual(spec.mergeSort(unsortedArray), TestData.expectedResultFor(unsortedArray), "it must sort an array <")
+        XCTAssertEqual(spec.mergeSort(sortedArray), TestData.expectedResultFor(sortedArray), "the array must remain sorted")
+    }
 }
 
 private extension SortingAlgorithmsTests {

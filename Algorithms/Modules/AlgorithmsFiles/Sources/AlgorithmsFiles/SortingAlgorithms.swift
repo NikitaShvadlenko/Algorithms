@@ -63,4 +63,49 @@ public class SortingAlgorithms<T: Comparable> {
             let largerElements = array.filter { $0 > pivotElement }
             return quickSort(smallerElements) + [pivotElement] + quickSort(largerElements)
     }
+
+    public func mergeSort(_ array: [T]) -> [T] {
+        guard array.count > 1 else {
+            return array
+        }
+
+        let middleIndex = array.count/2
+        let leftArray = mergeSort(Array(array[0..<middleIndex]))
+        let rightArray = mergeSort(Array(array[middleIndex..<array.count]))
+
+        return merge(leftArray: leftArray, rightArray: rightArray)
+
+    }
+
+    func merge(leftArray: [T], rightArray: [T]) -> [T] {
+        var leftIndex = 0
+        var rightIndex = 0
+        var result: [T] = []
+
+        while leftIndex<leftArray.count && rightIndex<rightArray.count {
+            if leftArray[leftIndex] < rightArray[rightIndex] {
+                result.append(leftArray[leftIndex])
+                leftIndex += 1
+            } else if rightArray[rightIndex] < leftArray[leftIndex] {
+                result.append(rightArray[rightIndex])
+                rightIndex += 1
+            } else {
+                result.append(leftArray[leftIndex])
+                result.append(rightArray[rightIndex])
+                leftIndex += 1
+                rightIndex += 1
+            }
+        }
+
+        while leftIndex < leftArray.count {
+            result.append(leftArray[leftIndex])
+            leftIndex += 1
+        }
+
+        while rightIndex < rightArray.count {
+            result.append(rightArray[rightIndex])
+            rightIndex += 1
+        }
+        return result
+    }
 }
