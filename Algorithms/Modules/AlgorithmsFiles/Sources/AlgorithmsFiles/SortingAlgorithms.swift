@@ -108,4 +108,24 @@ public class SortingAlgorithms<T: Comparable> {
         }
         return result
     }
+
+    public func insertionSort(_ array: [T]) -> [T] {
+        var array = array
+        guard array.count > 0 else {
+            return array
+        }
+
+        for currentSpace in 1..<array.count {
+            var currentElementIndex = currentSpace
+            while currentElementIndex < array.count {
+                if array[currentElementIndex] < array[currentElementIndex-1] {
+                    array.swapAt(currentElementIndex, currentElementIndex-1)
+                    currentElementIndex -= 1
+                } else {
+                    break
+                }
+            }
+        }
+        return array
+    }
 }
