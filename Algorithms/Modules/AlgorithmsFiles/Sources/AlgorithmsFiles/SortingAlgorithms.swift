@@ -118,7 +118,7 @@ public class SortingAlgorithms<T: Comparable> {
 
         for currentSpace in 1..<array.count {
             var currentElementIndex = currentSpace
-            while currentElementIndex < array.count {
+            while currentElementIndex > 0 {
                 if array[currentElementIndex] < array[currentElementIndex-1] {
                     array.swapAt(currentElementIndex, currentElementIndex-1)
                     currentElementIndex -= 1
